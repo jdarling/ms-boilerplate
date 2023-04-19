@@ -2,7 +2,6 @@
 
 - Opinionated
 - Microservice Architecture
-- Full stack JavaScript
 - Boilerplate for web projects
 
 ## Documentation
