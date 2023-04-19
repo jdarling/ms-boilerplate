@@ -1,0 +1,37 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}/../tools"
+TOOLS_DIR=$(pwd)
+cd "${DIR}" || exit 1
+
+clustername='localdev'
+namespace='myproduct'
+FORCE_KUBECONFIG="false"
+
+eval `CONFIG_FILE="${DIR}/../.config" "${TOOLS_DIR}/explode_config" "$@"`
+
+cmdline=''
+
+while [[ $# > 0 ]]
+do
+  key="$1"
+  case $key in
+    -n|--namespace)
+      namespace="$2"
+      shift
+    ;;
+    *)
+    # unknown option
+    cmdline=$cmdline' '$key
+    ;;  esac
+  shift # past argument or value
+done
+
+KUBECONFIG_FILE="${DIR}/config/${clustername}.kube.yaml"
+if [ ! -f "${KUBECONFIG_FILE}" ] || [ "${FORCE_KUBECONFIG}" == "true" ]; then
+  "${DIR}/k3d" kubeconfig get "${clustername}">"${KUBECONFIG_FILE}"
+  chmod go-r "${KUBECONFIG_FILE}"
+fi
+
+echo "${KUBECONFIG_FILE}"

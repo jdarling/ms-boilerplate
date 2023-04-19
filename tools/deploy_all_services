@@ -1,0 +1,49 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}"/.. || exit 1
+wd=$(pwd)
+
+cd "${wd}/kube" || exit 1
+kctldir=$(pwd)
+kubecmd="kubectl-k3"
+
+while [[ $# > 0 ]]
+do
+  key="$1"
+  case $key in
+    -k|--kubecmd)
+      kubecmd="$2"
+      shift
+    ;;
+    *)
+    # unknown option
+    cmdline=$cmdline' '$key
+    ;;  esac
+  shift # past argument or value
+done
+
+kubectl="${kctldir}/${kubecmd}"
+
+cd "$wd/" || exit 1
+sd=$(pwd)
+
+services=$(find . -type f -name 'prod.yaml')
+
+for sp in $services; do
+  serviceName=$(echo $sp | cut -f 2 -d '/')
+  service="${serviceName}"
+  if [ "${service}" == "services" ]; then
+    serviceName=$(echo $sp | cut -f 3 -d '/')
+    service="services/${serviceName}"
+  fi
+  if [ "${service}" != "base" ]; then
+    cd "${sd}/${service}" || exit 1
+    servicePath=$(pwd)
+    prodYaml="${servicePath}/prod.yaml"
+    echo "--------------------------------------------------------------"
+    echo "Deploying ${serviceName}"
+    echo "--------------------------------------------------------------"
+    "${kubectl}" apply -f "${prodYaml}" | grep -v "unchanged"
+  fi
+done

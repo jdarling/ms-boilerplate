@@ -1,0 +1,41 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}" || exit 1
+
+mongohost="172.17.0.1"
+mongodb="myproduct"
+
+eval `CONFIG_FILE="${DIR}/../.config" "${DIR}/explode_config" "$@"`
+
+function showhelp(){
+  >&2 echo "Usage: $PARENT_COMMAND [options] <services>
+
+  -H <hostName>, --host <hostName> - MongoDB host to attach to, default ${mongohost}
+  -d <databaseName>, --db <databaseName> - MongoDB database to use, default ${mongodb}
+  -h, --help"
+  exit 1
+}
+
+while [[ $# > 0 ]]; do
+  case "$1" in
+    -h|--help)
+      showhelp
+      ;;
+    -H|--host)
+      mongohost="${2}"
+      shift
+      ;;
+    -d|--db)
+      mongodb="${2}"
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+  esac
+  shift
+done
+
+docker run -it --rm --network eonclash mongo mongosh --host "${mongohost}" ${mongodb} $@

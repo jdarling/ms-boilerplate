@@ -1,0 +1,38 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "$DIR"
+
+btd=$(pwd)
+
+cd ..
+wd=$(pwd)
+
+cd "$wd/services/"
+sd=$(pwd)
+services=$(find . -type d -name 'lib' | grep 'src/lib')
+
+#COPY_FILES=(
+#  .dockerignore
+#  .gitignore
+#  build.sh
+#  Dockerfile
+#)
+
+COPY_FILES=(
+  build.sh
+)
+
+for servicePath in $services; do
+  cd "$sd/$service"
+  service=$(echo $servicePath | cut -f 2 -d '/')
+  echo ""
+  echo "Updating $service"
+  for filename in ${COPY_FILES[@]}; do
+    echo "Copying $filename"
+    rm -f "$sd/$service/$filename"
+    cp "$btd/$filename" "$sd/$service/$filename"
+  done
+  git commit -am "Update build tools"
+  git push origin master
+done

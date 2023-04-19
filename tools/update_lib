@@ -1,0 +1,26 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}"/.. || exit 1
+wd=$(pwd)
+
+cd "$wd/services/"
+sd=$(pwd)
+
+services=$(find . -type d -name 'lib' | grep 'src/lib' | grep -v '.git')
+
+for sp in $services; do
+  service=$(echo $sp | cut -f 2 -d '/')
+  if [ "${service}" != "__base" ]; then
+    cd "${sd}/$service" || exit 1
+    servicePath=$(pwd)
+    echo ""
+    echo $servicePath
+    if [[ -f "${servicePath}/src/lib/update_from_base" ]]; then
+      echo "Updating $service"
+      "${servicePath}"/src/lib/update_from_base
+    else
+      echo "ERROR: Can't update server \"${service}\" no update_from_base found!"
+    fi
+  fi
+done

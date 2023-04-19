@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}/tools" || exit 1
+TOOLS_DIR=$(pwd)
+cd "${DIR}/kube" || exit 1
+KUBE_DIR=$(pwd)
+cd "${DIR}" || exit 1
+
+composefile="${DIR}/docker-compose.yml"
+clustername='localdev'
+usedockercompose="true"
+usek3="false"
+
+eval `CONFIG_FILE="${DIR}/.config" "${TOOLS_DIR}/explode_config" "$@"`
+
+if [[ "${usedockercompose}" == "true" ]]; then
+  cd "${DIR}" || exit 1
+  if [ ! -f "${composefile}" ]; then
+    echo "ERROR: No docker-compose file found at "${composefile}""
+    exit 1
+  fi
+  docker compose -f "${composefile}" up -d
+fi
+
+if [[ "${usek3}" == "true" ]]; then
+  cd "${KUBE_DIR}" || exit 1
+  clusterExists=$("${KUBE_DIR}/k3d" cluster list | grep "${clustername}")
+  if [ "${clusterExists}" == "" ]; then
+    "${KUBE_DIR}/k3d" cluster create "${clustername}"
+  fi
+  "${KUBE_DIR}/k3d" cluster start "${clustername}"
+fi

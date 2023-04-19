@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# usage ./explode_config --foo "new bar" --bar="some value" --la --te=do --ma
+# output
+#  export some=value
+#  export bar=some value
+#  export la=true
+#  export foo=new bar
+#  export ma=true
+#  export te=do
+#
+# using .config
+#  [default]
+#  foo=bar
+#  bar=none
+#  some=value
+#
+#  [prod]
+#  foo=prod bar
+#  bar=prod none
+#  some=prod value
+
+declare -A settings
+declare -A settings2
+
+: ${CONFIG_FILE:=".config"}
+
+segment=default
+while [[ $# > 0 ]]
+do
+  key="$1"
+  next="$2"
+  keyPrefix=`echo "$key" | cut -c-2`
+  nextPrefix=`echo "$next" | cut -c-2`
+  if [[ "$key" == -* ]]; then
+    if [[ $keyPrefix == '--' ]]; then
+      key=`echo "$key" | cut -c3-`
+    else
+      key=`echo "$key " | cut -c2- | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
+    fi
+    hasEqual=`echo "$key" | grep -o '='`
+    if [[ "$hasEqual" != "" ]]; then
+      tkey=`echo "$key" | cut -d '=' -f 1`
+      value=`echo "$key" | cut -d '=' -f 2-`
+      key=$tkey
+    else
+      if [[ $# == 1 || "$next" =~ ^- ]]; then
+        value=true
+      else
+        value=$next
+        shift
+      fi
+    fi
+    if [[ "$key" == "environment" || "$key" == "env" ]]; then
+      segment=$value
+    fi
+    settings[$key]=$value
+    settings2[$key]=$value
+  fi
+  shift
+done
+
+if [ -f "${CONFIG_FILE}" ]; then
+  config=`cat ${CONFIG_FILE} | tr -d '\0' | egrep -zo "\[${segment}\]([^[]+)"`
+  IFS=$'\n'; for configLine in $(printf %b "$config"); do
+    configItem="$(echo -e "${configLine}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+    if [[ "$configItem" != "" ]]; then
+      hasEqual=`echo "$configItem" | grep -o '='`
+      if [[ "$hasEqual" != "" ]]; then
+        varname=`echo "$configItem" | cut -d '=' -f 1`
+        varvalue=`echo "$configItem" | cut -d '=' -f 2-`
+        char1=`echo "$varname" | cut -c-1`
+        if [[ $varname != "" && $char1 != "[" && $char1 != "#" && $char1 != ";" ]]; then
+          settings[$varname]=$varvalue
+        fi
+      fi
+    fi
+  done
+fi
+
+for key in ${!settings2[@]}; do
+  settings[$key]=${settings2[$key]}
+done
+
+for key in ${!settings[@]}; do
+  value=${settings[$key]}
+  if [[ $value == true || $value == false ]]; then
+    echo export $key=$value
+  else
+    echo "export $key=\"$value\""
+  fi
+done

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+cd "${DIR}" || exit 1
+
+if [[ "${DIR}" == *"src/lib" ]]; then
+  cd ../../../../ || exit 1
+else
+  cd .. || exit 1
+fi
+basePath=$(pwd)
+
+cd "${basePath}/services/__base/src/lib" || exit 1
+srcDir=$(pwd)
+
+cd ${DIR} || exit 1
+cp -r "${srcDir}/"* "${DIR}/"

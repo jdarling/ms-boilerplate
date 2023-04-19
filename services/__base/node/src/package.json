@@ -1,0 +1,33 @@
+{
+  "name": "{serviceName}",
+  "version": "0.0.1",
+  "description": "{serviceName} service",
+  "main": "service.mjs",
+  "author": "Jeremy Darling <jeremy.darling@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon service --debug --pretty --json=false --port=3000",
+    "start": "node service",
+    "test": "node --test --test-reporter=spec",
+    "test-ci": "node --test --test-reporter=tap"
+  },
+  "dependencies": {
+    "async": "^3.2.1",
+    "aws-sdk": "^2.977.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.5",
+    "csv-stringify": "^5.6.2",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "minimist": "^1.2.0",
+    "mongodb": "^4.1.1",
+    "multer": "^1.4.3",
+    "request": "^2.88.2",
+    "safe-json-stringify": "^1.2.0",
+    "xlsx": "^0.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

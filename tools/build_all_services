@@ -1,0 +1,26 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}"/.. || exit 1
+wd=$(pwd)
+
+cd "$wd/services/"
+sd=$(pwd)
+
+services=$(find . -type f -name 'build.sh' | grep '/build.sh')
+
+for sp in $services; do
+  serviceName=$(echo $sp | cut -f 2 -d '/')
+  if [ "${serviceName}" != "__base" ]; then
+    cd "${sd}/${serviceName}" || exit 1
+    servicePath=$(pwd)
+    echo ""
+    if [[ -f "${servicePath}/build.sh" ]]; then
+      echo "Building ${serviceName}"
+      cd "${servicePath}"
+      ./build.sh "$@"
+    else
+      echo "ERROR: Can't update server \"${serviceName}\" no update_from_base found!"
+    fi
+  fi
+done

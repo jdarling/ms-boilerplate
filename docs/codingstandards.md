@@ -1,0 +1,34 @@
+# Coding Standards
+
+- ES6 first
+- Don't use else
+- Small tight reusable code
+- Single level of indention
+- Test what needs to be tested
+- Use semicolons
+- Use descriptive variable names
+- Configuration first
+- No implicit or single statement scopes
+- All scopes must be wrapped in {}
+- Functional code over Classes and Objects
+- Always spaces, never tabs
+- 2 spaces indents
+- No trailing whitespace at end-of-line
+- Always ' or ` never " in JS
+- Always " or ` never ' for JSX (HTML)
+- Never begin a line with a ,
+- Never begin a line with an operator
+- Code should be clear enough that it doesn't need comments
+- If you need a comment use // unless it's a jsDoc declaration or license header
+- Formal style, consistent voice, no humor, present tense
+- Opening braces go on the same line
+- Avoid let and var
+- Use const
+- Don't mutate variables or members
+- Use lowerCamelCase for variables, properties and function names
+- Use UpperCamelCase for class names
+- Use UPPERCASE for Constants
+- Use the === operator
+- Do not extend built-in prototypes
+- No nested closures
+- No nesting lambdas

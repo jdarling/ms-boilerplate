@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}/../tools"
+TOOLS_DIR=$(pwd)
+cd "${DIR}" || exit 1
+
+clustername='localdev'
+namespace='myproduct'
+kubeconfig="${DIR}/config/kube.yaml"
+
+eval `CONFIG_FILE="${DIR}/../.config" "${TOOLS_DIR}/explode_config" "$@"`
+
+cmdline=''
+
+while [[ $# > 0 ]]
+do
+  key="$1"
+  case $key in
+    -n|--namespace)
+      namespace="$2"
+      shift
+    ;;
+    *)
+    # unknown option
+    cmdline=$cmdline' '$key
+    ;;  esac
+  shift # past argument or value
+done
+
+KUBECONFIG_FILE=$(./k3-get-config "$@")
+
+./kubectl --kubeconfig "${KUBECONFIG_FILE}" --namespace ${namespace} ${cmdline}
