@@ -35,5 +35,5 @@ for servicePath in $services; do
   done
 done
 
-#git commit -am "Update build tools"
-#git push origin main
+git commit -am "Update build tools"
+git push origin main
