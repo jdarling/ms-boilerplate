@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
-dockerorg=eonclash
+dockerorg=myorg
 
 PUBLISH=false
 
@@ -13,7 +12,7 @@ UPREV=false
 
 Showhelp () {
   scriptname=`basename "$0"`
-  echo "
+  cat <<USAGE
 ${scriptname} <options>
 
   Options:
@@ -24,7 +23,7 @@ ${scriptname} <options>
     -P, --publish - Publish the image to docker hub
 
     -h or --help - Show this screen
-    "
+USAGE
     exit 0
 }
 
@@ -59,6 +58,8 @@ do
     ;;  esac
   shift # past argument or value
 done
+
+SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
 
 # Get the current script directory
 

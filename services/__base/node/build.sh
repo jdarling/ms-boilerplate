@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
-DOCKER_ORG=eonclash
+dockerorg=myorg
 
 PUBLISH=false
 
@@ -13,7 +12,7 @@ UPREV=false
 
 Showhelp () {
   scriptname=`basename "$0"`
-  echo "
+  cat <<USAGE
 ${scriptname} <options>
 
   Options:
@@ -24,7 +23,7 @@ ${scriptname} <options>
     -P, --publish - Publish the image to docker hub
 
     -h or --help - Show this screen
-    "
+USAGE
     exit 0
 }
 
@@ -59,6 +58,8 @@ do
     ;;  esac
   shift # past argument or value
 done
+
+SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
 
 # Get the current script directory
 
@@ -112,8 +113,8 @@ else
 
   if [ -f "$(pwd)/prod.yaml" ]; then
     echo "*****Updating prod.yaml*****"
-    replaceText=$(cat prod.yaml | grep -E "image: *${DOCKER_ORG}/${SERVICE_NAME}:" | sed -e 's/^[[:space:]]*//')
-    replaceWith="image: ${DOCKER_ORG}/${SERVICE_NAME}:v${VERSION}"
+    replaceText=$(cat prod.yaml | grep -E "image: *${dockerorg}/${SERVICE_NAME}:" | sed -e 's/^[[:space:]]*//')
+    replaceWith="image: ${dockerorg}/${SERVICE_NAME}:v${VERSION}"
 
     newProdYaml=$(cat prod.yaml | sed "s~${replaceText}~${replaceWith}~")
     echo -e "${newProdYaml}">prod.yaml
@@ -134,17 +135,17 @@ if [[ "${EXITED}" != "" ]]; then
   docker rm $(docker ps -aq --filter status=exited)
 fi
 docker image rm "${SERVICE_NAME}:latest"
-docker image rm "${DOCKER_ORG}/${SERVICE_NAME}:latest"
-docker image rm "${DOCKER_ORG}/${SERVICE_NAME}:${SERVICE_VERSION}"
+docker image rm "${dockerorg}/${SERVICE_NAME}:latest"
+docker image rm "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
 
 set -ex
 
 docker build --rm --tag "${SERVICE_NAME}:latest" \
   --build-arg "SERVICE_VERSION=${SERVICE_VERSION}" .
-docker tag "${SERVICE_NAME}:latest" "${DOCKER_ORG}/${SERVICE_NAME}:latest"
-docker tag "${SERVICE_NAME}:latest" "${DOCKER_ORG}/${SERVICE_NAME}:${SERVICE_VERSION}"
+docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:latest"
+docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
 
 if [[ ${PUBLISH} == true ]]; then
-  docker push "$DOCKER_ORG/$SERVICE_NAME:latest"
-  docker push "$DOCKER_ORG/$SERVICE_NAME:${SERVICE_VERSION}"
+  docker push "$dockerorg/$SERVICE_NAME:latest"
+  docker push "$dockerorg/$SERVICE_NAME:${SERVICE_VERSION}"
 fi
