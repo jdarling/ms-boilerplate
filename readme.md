@@ -8,6 +8,8 @@
 
 - [Architecture Decision Records](docs/adr/)
 - [Coding Standards](docs/codingstandards/)
+- [Tools](tools/)
+- [Kube Tools](kube/)
 
 ## Sample Usage
 
@@ -43,41 +45,3 @@ dockerorg=myorg
 mongohost=172.17.0.1
 mongodb=mydb
 ```
-
-## Kube Tools
-
-Having a basic collection of tools to manage Kubernetes is a must, the kube folder contains some starter scripts and wrappers to get started. Any scripts ending in -k3 are focused on working with local K3s clusters created using K3d.
-
-### helm
-
-### helm-k3
-
-### k3-get-config
-
-### k3d
-
-### kubectl
-
-### kubectl-k3
-
-### update_kube.sh
-
-## Tools
-
-The tools folder contains scripts around managing the project as a whole. This includes creating new services, building services, building the ui, deploying services, deploying the ui, updating support libraries, and updating tools scripts inside of services.
-
-### build_all_services
-
-### build.sh
-
-### deploy_all_services
-
-### explode_config
-
-### mongo_connect
-
-### new_service
-
-### update_lib
-
-### update_tools
