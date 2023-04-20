@@ -9,8 +9,8 @@ uploads/
 src/public/build/
 kube/config/*.kube.yaml
 
-# Created by https://www.toptal.com/developers/gitignore/api/node,csharp,python,react
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,csharp,python,react
+# Created by https://www.toptal.com/developers/gitignore/api/node,react,csharp,python,lua
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,react,csharp,python,lua
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -410,6 +410,47 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+### Lua ###
+# Compiled Lua sources
+luac.out
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz
+
+# Object files
+*.o
+*.os
+*.ko
+*.elf
+
+# Precompiled Headers
+*.gch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+
 ### Node ###
 # Logs
 logs
@@ -554,7 +595,6 @@ dist
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -729,4 +769,4 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/node,csharp,python,react
+# End of https://www.toptal.com/developers/gitignore/api/node,react,csharp,python,lua
