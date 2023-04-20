@@ -15,6 +15,20 @@ One the basic boilerplate is in place and mostly flushed out the idea is to crea
 
 The sample project will be released as Open Source in hopes that it will lower the barrier to entry for others who need a similar solution.
 
+## Service Templates
+
+Service templates give you a starting point for adding a new service to the deployment. They are basic boilerplates around specific languages, you can create a new service for a desired language using `tools/new_service --serviceName "myservice" --serviceType "node"` see the new_service section for more details.
+
+Each service type is created with a minimal framework that makes it ideal for service or microservice development. If the supplied version isn't to your liking, just create your own using an existing one as a template or from scratch.
+
+### C#
+
+### Lua
+
+### Node
+
+### Python
+
 ## Configuration
 
 ### .config
