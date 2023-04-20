@@ -7,7 +7,7 @@
 ## Documentation
 
 - [Architecture Decision Records](docs/adr/)
-- [Coding Standards](docs/codingstandards.md)
+- [Coding Standards](docs/codingstandards/)
 
 ## Sample Usage
 
