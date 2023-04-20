@@ -144,6 +144,11 @@ SERVICE_VERSION="v${VERSION}"
 
 cd ${DIR}
 
+if [ ! -f "Dockerfile" ]; then
+  echo "ERROR: No Dockerfile found"
+  exit 1
+fi
+
 if [ -d './src/public' ]; then
   cd src/public
   yarn build
@@ -160,7 +165,7 @@ docker image rm "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
 
 set -ex
 
-docker build --rm --tag "${SERVICE_NAME}:latest" \
+docker build --rm --tag "${SERVICE_NAME}:latest" \ 
   --build-arg "SERVICE_VERSION=${SERVICE_VERSION}" .
 docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:latest"
 docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
