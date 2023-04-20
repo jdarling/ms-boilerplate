@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}" || exit 1
+
 dockerorg=myorg
 
 PUBLISH=false
@@ -25,6 +28,15 @@ ${scriptname} <options>
     -h or --help - Show this screen
 USAGE
     exit 0
+}
+
+getVersion () {
+  if [ $IS_NODE_PROJECT ]; then
+    export VERSION=`node -e 'console.log(require("./src/package.json").version)'`
+  else
+    echo "ERROR: Must specify base version for service ${SERVICE_NAME}"
+    exit 1
+  fi
 }
 
 while [[ $# > 0 ]]
@@ -59,7 +71,13 @@ do
   shift # past argument or value
 done
 
-SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
+IS_NODE_PROJECT=$(test -f "${DIR}/src/package.json")
+
+if [ $IS_NODE_PROJECT ]; then
+  SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
+else
+  SERVICE_NAME=$(basename "${DIR}")
+fi
 
 # Get the current script directory
 
@@ -79,7 +97,7 @@ fi
 
 if [[ ${UPREV} == true ]]; then
   if [[ ${VERSION} == false ]]; then
-    VERSION=`node -e 'console.log(require("./src/package.json").version)'`
+    getVersion
   fi
   a=( ${VERSION//./ } )
   if [[ ${MAJOR} == true ]]; then
@@ -102,22 +120,24 @@ if [[ ${UPREV} == true ]]; then
 fi
 
 if [[ ${VERSION} == false ]]; then
-  VERSION=`node -e 'console.log(require("./src/package.json").version)'`
+  getVersion
 else
-  cd src
-  npm version "${VERSION}"
-  git add package.json
-  git commit -m "v${VERSION}"
-  git push origin master
-  cd ..
+  if [ $IS_NODE_PROJECT ]; then
+    cd src
+    npm version "${VERSION}"
+    git add package.json
+    git commit -m "v${VERSION}"
+    git push origin master
+    cd ..
 
-  if [ -f "$(pwd)/prod.yaml" ]; then
-    echo "*****Updating prod.yaml*****"
-    replaceText=$(cat prod.yaml | grep -E "image: *${dockerorg}/${SERVICE_NAME}:" | sed -e 's/^[[:space:]]*//')
-    replaceWith="image: ${dockerorg}/${SERVICE_NAME}:v${VERSION}"
+    if [ -f "$(pwd)/prod.yaml" ]; then
+      echo "*****Updating prod.yaml*****"
+      replaceText=$(cat prod.yaml | grep -E "image: *${dockerorg}/${SERVICE_NAME}:" | sed -e 's/^[[:space:]]*//')
+      replaceWith="image: ${dockerorg}/${SERVICE_NAME}:v${VERSION}"
 
-    newProdYaml=$(cat prod.yaml | sed "s~${replaceText}~${replaceWith}~")
-    echo -e "${newProdYaml}">prod.yaml
+      newProdYaml=$(cat prod.yaml | sed "s~${replaceText}~${replaceWith}~")
+      echo -e "${newProdYaml}">prod.yaml
+    fi
   fi
 fi
 SERVICE_VERSION="v${VERSION}"
