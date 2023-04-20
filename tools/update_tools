@@ -34,5 +34,5 @@ for servicePath in $services; do
     cp "$btd/$filename" "$sd/$service/$filename"
   done
   git commit -am "Update build tools"
-  git push origin master
+  git push origin
 done
