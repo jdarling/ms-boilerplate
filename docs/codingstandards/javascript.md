@@ -1,4 +1,4 @@
-# Coding Standards
+# JavaScript Coding Standards
 
 - ES6 first
 - Don't use else
