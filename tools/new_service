@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "${DIR}" || exit 1
 
 serviceVersion=v1
-projectName=false
+serviceName=false
 serviceType=false
 
 eval `CONFIG_FILE="${DIR}/../.config" "${DIR}/explode_config" "$@"`
@@ -31,8 +31,8 @@ while [[ $# -gt 0 ]]
 do
   key="$1"
   case $key in
-    -p|--projectName|--projectname)
-      projectName="$2"
+    -n|--serviceName|--servicename)
+      serviceName="$2"
       shift
     ;;
     -t|--serviceType|--servicetype)
@@ -47,8 +47,8 @@ done
 
 checkServiceType
 
-if [[ ${projectName} == false ]]; then
-  echo "Must supply projectName"
+if [[ ${serviceName} == false ]]; then
+  echo "Must supply serviceName"
   exit 1
 fi
 
@@ -64,22 +64,22 @@ cd ..
 cd "./services/" || exit 1
 sd=$(pwd)
 
-echo "Creating project ${projectName}"
+echo "Creating project ${serviceName}"
 
-rm -rf "${sd}/${projectName}"
-mkdir "${sd}/${projectName}"
-cp -ar "${sd}/__base/${serviceType}/." "${sd}/${projectName}/"
-rm -rf "${sd}/${projectName}/src/samples"
-rm -rf "${sd}/${projectName}/src/node_modules"
-cd "${sd}/${projectName}" || exit 1
+rm -rf "${sd}/${serviceName}"
+mkdir "${sd}/${serviceName}"
+cp -ar "${sd}/__base/${serviceType}/." "${sd}/${serviceName}/"
+rm -rf "${sd}/${serviceName}/src/samples"
+rm -rf "${sd}/${serviceName}/src/node_modules"
+cd "${sd}/${serviceName}" || exit 1
 
-echo "# ${projectName}
+echo "# ${serviceName}
 
 Description of what the service does belongs here.
-">"$sd/$projectName/readme.md"
+">"$sd/$serviceName/readme.md"
 
 if test -f "init.sh"; then
   sh init.sh "$@" && rm -f init.sh || exit 1
 fi
 
-cd "${sd}/${projectName}" || exit 1
+cd "${sd}/${serviceName}" || exit 1
