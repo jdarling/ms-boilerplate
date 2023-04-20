@@ -32,8 +32,9 @@ for servicePath in $services; do
     echo "Copying $filename"
     rm -f "$sd/$servicePath/$filename"
     cp "$btd/$filename" "$sd/$servicePath/$filename"
+    git add "$sd/$servicePath/$filename"
   done
 done
 
-git commit -am "Update build tools"
+git commit -m "Update build tools"
 git push origin main
