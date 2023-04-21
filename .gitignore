@@ -5,6 +5,7 @@ reports/
 uploads/
 
 .config
+.envconfig
 .env
 src/public/build/
 kube/config/*.kube.yaml
