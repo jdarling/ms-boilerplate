@@ -76,7 +76,8 @@ IS_NODE_PROJECT=$(test -f "${DIR}/src/package.json")
 if [ $IS_NODE_PROJECT ]; then
   SERVICE_NAME=`node -e 'console.log(require("./src/package.json").name)'`
 else
-  SERVICE_NAME=$(basename "${DIR}")
+  echo "Service name: ${SERVICE_NAME}"
+  : ${SERVICE_NAME:=$(basename "${DIR}")}
 fi
 
 # Get the current script directory
@@ -165,8 +166,7 @@ docker image rm "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
 
 set -ex
 
-docker build --rm --tag "${SERVICE_NAME}:latest" \ 
-  --build-arg "SERVICE_VERSION=${SERVICE_VERSION}" .
+docker build --rm --tag "${SERVICE_NAME}:latest" --build-arg "SERVICE_VERSION=${SERVICE_VERSION}" .
 docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:latest"
 docker tag "${SERVICE_NAME}:latest" "${dockerorg}/${SERVICE_NAME}:${SERVICE_VERSION}"
 
