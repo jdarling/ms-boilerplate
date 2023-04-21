@@ -61,7 +61,8 @@ do
 done
 
 if [ -f "${CONFIG_FILE}" ]; then
-  config=`cat ${CONFIG_FILE} | tr -d '\0' | egrep -zo "\[${segment}\]([^[]+)"`
+  #config=`cat ${CONFIG_FILE} | tr -d '\0' | egrep -zo "\[${segment}\]([^[]+)"`
+  config=$(<${CONFIG_FILE} | tr -d '\0' | egrep -zo "\[${segment}\]([^[]+)")
   IFS=$'\n'; for configLine in $(printf %b "$config"); do
     configItem="$(echo -e "${configLine}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
     if [[ "$configItem" != "" ]]; then
