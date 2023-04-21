@@ -6,7 +6,7 @@ cd "${DIR}" || exit 1
 dockerorg=myorg
 
 rootDir=$(echo "${DIR}" | sed 's~/services/.*~~')
-eval `CONFIG_FILE="${rootDir}/.config" "${rootDir}/tools/explode_config" "$@"`
+eval `CONFIG_FILE="${rootDir}/.envconfig" "${rootDir}/tools/explode_config" "$@"`
 
 PUBLISH=false
 
