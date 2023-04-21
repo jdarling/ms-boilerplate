@@ -24,12 +24,13 @@ if [[ "${usedockercompose}" == "true" ]]; then
   fi
   docker compose -f "${composefile}" up -d
 fi
-
 if [[ "${usek3}" == "true" ]]; then
   cd "${KUBE_DIR}" || exit 1
   clusterExists=$("${KUBE_DIR}/k3d" cluster list | grep "${clustername}")
   if [ "${clusterExists}" == "" ]; then
+    echo "Cluster ""${clustername}"" not found, creating"
     "${KUBE_DIR}/k3d" cluster create "${clustername}"
   fi
+  echo "Starting ""${clustername}"""
   "${KUBE_DIR}/k3d" cluster start "${clustername}"
 fi
