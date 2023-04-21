@@ -5,13 +5,8 @@ cd "${DIR}" || exit 1
 
 dockerorg=myorg
 
-echo "Finding .config file for explode_config"
-if [[ "${DIR}" == *"/services/"* ]]; then
-  ROOT_DIR=$(echo "${DIR}" | sed 's~/services/.*~~')
-  eval `CONFIG_FILE="${ROOT_DIR}/.config" "${ROOT_DIR}/tools/explode_config" "$@"`
-elif [[ "${DIR}" == *"/ui" ]]; then
-  eval `CONFIG_FILE="${DIR}/../.config" "${DIR}/../tools/explode_config" "$@"`
-fi
+rootDir=$(echo "${DIR}" | sed 's~/services/.*~~')
+eval `CONFIG_FILE="${rootDir}/.envconfig" "${rootDir}/tools/explode_config" "$@"`
 
 PUBLISH=false
 
