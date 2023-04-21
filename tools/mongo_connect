@@ -6,7 +6,7 @@ cd "${DIR}" || exit 1
 mongohost="172.17.0.1"
 mongodb="myproduct"
 
-eval `CONFIG_FILE="${DIR}/../.config" "${DIR}/explode_config" "$@"`
+eval `CONFIG_FILE="${DIR}/../.envconfig" "${DIR}/explode_config" "$@"`
 
 function showhelp(){
   >&2 echo "Usage: $PARENT_COMMAND [options] <services>

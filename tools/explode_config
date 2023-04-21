@@ -9,7 +9,7 @@
 #  export ma=true
 #  export te=do
 #
-# using .config
+# using .envconfig
 #  [default]
 #  foo=bar
 #  bar=none
@@ -23,7 +23,7 @@
 declare -A settings
 declare -A settings2
 
-: ${CONFIG_FILE:=".config"}
+: ${CONFIG_FILE:=".envconfig"}
 
 segment=default
 while [[ $# > 0 ]]

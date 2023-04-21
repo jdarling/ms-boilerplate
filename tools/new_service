@@ -7,7 +7,7 @@ serviceVersion=v1
 serviceName=false
 serviceType=false
 
-eval `CONFIG_FILE="${DIR}/../.config" "${DIR}/explode_config" "$@"`
+eval `CONFIG_FILE="${DIR}/../.envconfig" "${DIR}/explode_config" "$@"`
 
 function checkServiceType {
   serviceType=$(echo "${serviceType}" | awk '{print tolower($0)}')
