@@ -29,13 +29,13 @@ Each service type is created with a minimal framework that makes it ideal for se
 
 In order to make it easier to utilize the built in tooling the confuration loader suports the concept of environment based configuration.
 
-You can provide configuration values in the .config file for a given environment by creating a segment in the file using \[environmentName] the default environment name is "default" and is loaded if no other environment is specified.
+You can provide configuration values in the .envconfig file for a given environment by creating a segment in the file using \[environmentName] the default environment name is "default" and is loaded if no other environment is specified.
 
-Calling any script with --environment "environmentName" will load that environment configuration. If the environment isn't defined within the .config file then no values will be loaded.
+Calling any script with --environment "environmentName" will load that environment configuration. If the environment isn't defined within the .envconfig file then no values will be loaded.
 
 In this way you don't always have to provide commandline confiruation values every time you call a script.
 
-### .config
+### .envconfig
 
 Belongs in the root of the project, right beside start and stop
 
