@@ -1,4 +1,4 @@
-<mxfile modified="2023-04-24T16:02:03.973Z" host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="7gnQOfaxOz3AOWwPQHDr" version="21.2.1" type="github">
+<mxfile modified="2023-04-24T16:07:52.448Z" host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="_Bi-5QfpUer_6BmQNulv" version="21.2.1" type="github">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Overview">
     <mxGraphModel dx="1249" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -7,19 +7,19 @@
         <mxCell id="w67TNBrPyWxpC4nMd5Yv-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-63" target="w67TNBrPyWxpC4nMd5Yv-68">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-63" value="Gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-63" value="Gateway/&lt;br&gt;Proxy" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="220" y="290" width="80" height="220" as="geometry" />
         </mxCell>
         <mxCell id="w67TNBrPyWxpC4nMd5Yv-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-65">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-63">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-63">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="w67TNBrPyWxpC4nMd5Yv-64" value="Microservice" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
           <mxGeometry x="530" y="315" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-65" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-65" value="Cache/DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
           <mxGeometry x="700" y="305" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="w67TNBrPyWxpC4nMd5Yv-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-68" target="w67TNBrPyWxpC4nMd5Yv-64">
@@ -33,6 +33,15 @@
         </mxCell>
         <mxCell id="w67TNBrPyWxpC4nMd5Yv-72" value="Clients" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="80" y="370" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-74" target="w67TNBrPyWxpC4nMd5Yv-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-74" value="UI" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.disk;" vertex="1" parent="1">
+          <mxGeometry x="370" y="416" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-76" value="&lt;h1&gt;Platform&lt;/h1&gt;&lt;p&gt;The basic concept is to create something very similar to what you would see in AWS/GCP/etc... where you have an edge gateway that is used to service the static assets (UI), publish messages to an even bus, and read data from readstores.&amp;nbsp; The consumers can be microservices or functions (grouped by family).&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="414" width="360" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
