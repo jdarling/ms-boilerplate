@@ -1,47 +1,153 @@
-<mxfile modified="2023-04-24T16:07:52.448Z" host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="_Bi-5QfpUer_6BmQNulv" version="21.2.1" type="github">
+<mxfile modified="2023-04-24T17:00:09.819Z" host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="Mhy4txciXLtzKPQ6cJZU" version="21.2.1" type="github" pages="2">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Overview">
-    <mxGraphModel dx="1249" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="874" dy="453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-63" target="w67TNBrPyWxpC4nMd5Yv-68">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-63" target="w67TNBrPyWxpC4nMd5Yv-68" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-63" value="Gateway/&lt;br&gt;Proxy" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-63" value="Gateway/&lt;br&gt;Proxy" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="220" y="290" width="80" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-65">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-65" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-63">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-64" target="w67TNBrPyWxpC4nMd5Yv-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-64" value="Microservice" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-64" value="Microservice" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="530" y="315" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-65" value="Cache/DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-65" value="Cache/DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="700" y="305" width="60" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-68" target="w67TNBrPyWxpC4nMd5Yv-64">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-68" target="w67TNBrPyWxpC4nMd5Yv-64" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-68" value="Event Store" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-68" value="Event Store" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="360" y="315" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-72" target="w67TNBrPyWxpC4nMd5Yv-63">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-72" target="w67TNBrPyWxpC4nMd5Yv-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-72" value="Clients" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-72" value="Clients" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="80" y="370" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="w67TNBrPyWxpC4nMd5Yv-74" target="w67TNBrPyWxpC4nMd5Yv-63">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="w67TNBrPyWxpC4nMd5Yv-74" target="w67TNBrPyWxpC4nMd5Yv-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-74" value="UI" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.disk;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-74" value="UI" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.disk;" parent="1" vertex="1">
           <mxGeometry x="370" y="416" width="78" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="w67TNBrPyWxpC4nMd5Yv-76" value="&lt;h1&gt;Platform&lt;/h1&gt;&lt;p&gt;The basic concept is to create something very similar to what you would see in AWS/GCP/etc... where you have an edge gateway that is used to service the static assets (UI), publish messages to an even bus, and read data from readstores.&amp;nbsp; The consumers can be microservices or functions (grouped by family).&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="w67TNBrPyWxpC4nMd5Yv-76" value="&lt;h1&gt;Platform&lt;/h1&gt;&lt;p&gt;The basic concept is to create something very similar to what you would see in AWS/GCP/etc... where you have an edge gateway that is used to service the static assets (UI), publish messages to an even bus, and read data from readstores.&amp;nbsp; The consumers can be microservices or functions (grouped by family).&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="414" width="360" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="KPzFOLWej0df02CNq4m1" name="AWS">
+    <mxGraphModel dx="874" dy="1553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oD50kPxgK6vtKba90Tjz-1" value="Inbound Event" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-2" target="oD50kPxgK6vtKba90Tjz-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-2" value="Gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1048.8" y="197" width="70" height="458.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-4" target="oD50kPxgK6vtKba90Tjz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-4" value="Mobile Client" style="outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_notification;pointerEvents=1;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="850" y="271" width="100" height="81" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-6" target="oD50kPxgK6vtKba90Tjz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-6" value="Web Client" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_with_Server.svg;" vertex="1" parent="1">
+          <mxGeometry x="868.8" y="395.05" width="62.400000000000006" height="62.400000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-8" target="oD50kPxgK6vtKba90Tjz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-8" value="3rd Party Consumer" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Half_Rack_ToR.svg;" vertex="1" parent="1">
+          <mxGeometry x="855.8999999999999" y="484.5" width="88.2" height="114.6" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-10" target="oD50kPxgK6vtKba90Tjz-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-10" value="S3 bucket segregated&lt;br&gt;by event family" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="1218.8" y="216" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-12" target="oD50kPxgK6vtKba90Tjz-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-12" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" vertex="1" parent="1">
+          <mxGeometry x="1468.8" y="215.5" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-14" target="oD50kPxgK6vtKba90Tjz-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-14" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;" vertex="1" parent="1">
+          <mxGeometry x="1338.8" y="216" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-17" value="Edge Reads (Serviceless)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-18" target="oD50kPxgK6vtKba90Tjz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-18" value="Readstore Datasource" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;labelBackgroundColor=#ffffff;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="1578.8000000000002" y="386.25" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-19" value="&lt;h1&gt;Kubernetes&lt;/h1&gt;&lt;p&gt;Deploy the microservices into EKS or ECS.&amp;nbsp; Enable HPA and then allow the platform to scale the application as needed.&amp;nbsp; Depricate the readstore (GET) functionality or only utilize for local offline development.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1658.8" y="173.5" width="190" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-20" value="&lt;h1&gt;Serviceless&lt;/h1&gt;&lt;p&gt;Using edge reads (tying the API Gateway directly to DynamoDB) allows for fast reads of data cached at the edge.&amp;nbsp; This data could also be wrote to S3 and read at the edge if needed.&amp;nbsp; This means that we have no code to manage on reads from the system as long as we model the data properly.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1688.8" y="365.25" width="190" height="200.25" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-21" value="&lt;h1&gt;API Gateway&lt;/h1&gt;&lt;p&gt;Using API Gateway to manage the forward facing API gives us a central place to manage things like authentication, authorization, contracts for data, data flow into the system, and optimize our read patterns.&amp;nbsp; It also allows us to decentralize different parts of the stack into their own accounts if necessary (using Transit Gateway).&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="978.8" width="190" height="207.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-10" target="oD50kPxgK6vtKba90Tjz-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1298.8" y="85.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-24" target="oD50kPxgK6vtKba90Tjz-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-24" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" vertex="1" parent="1">
+          <mxGeometry x="1470.8" y="45.5" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-26" target="oD50kPxgK6vtKba90Tjz-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-26" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;" vertex="1" parent="1">
+          <mxGeometry x="1340.8" y="46" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-28" target="oD50kPxgK6vtKba90Tjz-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-28" value="Lambda&lt;br&gt;function" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1580.8" y="45.5" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-29" value="Data Lake" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.aurora;" vertex="1" parent="1">
+          <mxGeometry x="1713.8" y="30" width="80" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-30" value="&lt;h1&gt;Flexibility&lt;/h1&gt;&lt;p&gt;Build the product using event sourcing so we can fork events out to create data in other sources such as a data lake for business reports or analytics.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1808.8" y="21.75" width="190" height="125.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-31" value="&lt;h1&gt;Gateway&lt;/h1&gt;&lt;p&gt;While only showing as a basic outline, the gateway is a collection of services rolled into a single account that is used to manage all ingress and egress traffic into the platform.&amp;nbsp; It routes traffic into and out of other accounts allowing us to do things like parity testing, canary testing, zero downtime releases, full stack migration with zero downtime, etc...&amp;nbsp; The one downside to this is that it presents a single source of failure that needs to be accounted for by having backup accounts and traffic forking.&amp;nbsp; Geo IP and routing will also help to mitigate this situation.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1128.8" y="479.1" width="390" height="176.4" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oD50kPxgK6vtKba90Tjz-32" target="oD50kPxgK6vtKba90Tjz-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-32" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;" vertex="1" parent="1">
+          <mxGeometry x="1578.8" y="216" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="oD50kPxgK6vtKba90Tjz-35" value="&lt;h1&gt;EventBridge&lt;/h1&gt;&lt;p&gt;Replace EventStore with S3 and EventBridge to have a serverless solution that is fully managed by AWS.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1338.8" y="293.5" width="190" height="106.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
